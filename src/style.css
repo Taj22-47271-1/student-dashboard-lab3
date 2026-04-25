@@ -1,0 +1,263 @@
+:root {
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --bg-light: #f1f5f9;
+  --bg-dark: #0f172a;
+  --card-light: #ffffff;
+  --card-dark: #1e293b;
+  --text-light: #0f172a;
+  --text-dark: #f8fafc;
+  --muted: #64748b;
+  --danger: #ef4444;
+  --success: #16a34a;
+  --favorite: #f59e0b;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.app.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.app.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, var(--primary), #6366f1);
+  color: white;
+  padding: 25px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dashboard-header nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dashboard-header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.summary,
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-badge {
+  background: #e0e7ff;
+  color: #111827;
+  padding: 10px 15px;
+  border-radius: var(--radius);
+  display: flex;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.search-bar {
+  padding: 12px;
+  width: 300px;
+  border-radius: var(--radius);
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+}
+
+.sort-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sort-controls button {
+  background: var(--secondary);
+}
+
+.sort-controls button.active {
+  background: var(--primary);
+}
+
+.form-section {
+  background: var(--card-light);
+  padding: 20px;
+  border-radius: var(--radius);
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.1);
+}
+
+.dark .form-section {
+  background: var(--card-dark);
+}
+
+.form-section h2 {
+  margin-bottom: 15px;
+}
+
+.form-section form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid #cbd5e1;
+}
+
+.form-group small {
+  color: var(--danger);
+  margin-top: 4px;
+}
+
+.success-message {
+  color: var(--success);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  background: var(--card-light);
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.1);
+}
+
+.dark .student-card {
+  background: var(--card-dark);
+}
+
+.student-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.student-card p {
+  color: var(--muted);
+  margin: 5px 0;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.course-list {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.course-tag {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.favorite-btn {
+  width: 100%;
+  background: #64748b;
+  margin-bottom: 8px;
+}
+
+.favorite-btn.active {
+  background: var(--favorite);
+}
+
+.remove-btn {
+  width: 100%;
+  background: var(--danger);
+}
+
+.loader {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 30px;
+}
+
+@media (max-width: 650px) {
+  .form-section form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: span 1;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+}
